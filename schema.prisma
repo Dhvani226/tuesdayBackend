@@ -1,0 +1,23 @@
+datasource db {
+  provider = "postgresql" // Your database provider
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model ScienceDayApplication {
+  id                Int      @id @default(autoincrement())
+  studentName       String
+  schoolName        String
+  schoolAddress     String
+  schoolCity        String
+  schoolState       String
+  schoolPincode     String
+  teacherName       String
+  teacherEmail      String
+  modelType         String
+  participationType String
+  createdAt         DateTime @default(now())
+}
